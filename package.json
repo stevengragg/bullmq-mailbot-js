@@ -15,9 +15,9 @@
   "author": "Manuel Astudillo <manast@taskforce.sh>, Iurii Golskyi <igolskyi@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.25.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.26.0"
   },
   "dependencies": {
     "bullmq": "^1.24.4",

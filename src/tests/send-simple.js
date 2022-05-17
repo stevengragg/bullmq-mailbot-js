@@ -15,7 +15,7 @@ console.info(args);
         from: 'manast@taskforce.sh',
         to: args[0],
         subject: 'This is a simple test',
-        text: 'An email sent using BullMQ',
+        text: 'Botlog mo',
       },
     },
   )
