@@ -23,16 +23,14 @@ function MailBotClient(opts) {
     console.info(`Enqueued an email sending to ${mail.mailOpts.to}`)
   }
 
-  this.removeRepeatable = async function removeRepeatable(jobId, jobName, repeatOpts) {
-    console.info('removeRepeatable: received jobName, repeatOpts', { jobId, jobName, repeatOpts })
-    // const job = await queue.getJob(jobName, repeatOpts)
-    // console.info('job: ', job)
+  this.removeRepeatable = async function removeRepeatable(jobId) {
+    console.info('removeRepeatable: receive', { jobId })
     const repeatableJobs = await queue.getRepeatableJobs()
     console.info(repeatableJobs)
     const repeatableJob = repeatableJobs.length && repeatableJobs.find(item => item.id === jobId)
     console.info(repeatableJob)
     const res = await queue.removeRepeatableByKey(repeatableJob?.key)
-    console.info(`Removing repeatable job - ${jobName}`)
+    console.info(`Removing repeatable job - ${jobId}`)
     console.info('result: ', res)
   }
 

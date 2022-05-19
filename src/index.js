@@ -17,14 +17,7 @@ const { worker } = require('./mail/worker')
 worker.on('completed', job => {
   console.info(`Completed job ${job.id} successfully - job name ${job.name} and parent jobid - ${job?.opts?.repeat?.jobId}, sent email to ${job.data.mailOpts.to}`)
   if (job.name === 'community-repeatable-mail15') {
-    console.info('this is community-repeatable-mail ...')
-    // console.info(job)
-    // client.pauseJob()
-    client.removeRepeatable(job?.opts?.repeat?.jobId, job?.name, {
-      immediately: true,
-      every: 10 * 1000,
-      limit: 3,
-    })
+    client.removeRepeatable(job?.opts?.repeat?.jobId)
   }
 })
 worker.on('failed', (job, err) => console.info(
