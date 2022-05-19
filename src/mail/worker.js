@@ -2,7 +2,7 @@ const { Worker, QueueScheduler } = require('bullmq')
 const {
   connection,
   concurrency,
-  limiter,
+  // limiter,
   queueName,
 } = require('../config')
 
@@ -12,7 +12,7 @@ const worker = new Worker(
   {
     connection,
     concurrency,
-    limiter,
+    // limiter,
   },
 )
 

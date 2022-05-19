@@ -1,6 +1,6 @@
 module.exports = {
-  queueName: process.env.QUEUE_NAME || 'mailbot',
-  concurrency: parseInt(process.env.QUEUE_CONCURRENCY, 10) || 1,
+  queueName: 'mailbot4',
+  concurrency: 10,
   connection: {
     host: process.env.REDIS_HOST || 'localhost',
     port: parseInt(process.env.REDIS_PORT, 10) || '6379',
